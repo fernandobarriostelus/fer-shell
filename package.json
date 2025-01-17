@@ -1,0 +1,67 @@
+{
+  "name": "fer-shell",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "build": "next build",
+    "cypress": "cypress",
+    "dev": "NEXT_PRIVATE_LOCAL_WEBPACK=true next dev",
+    "lint": "next lint -d .",
+    "test": "jest",
+    "test:coverage": "jest --coverage --coverageReporters json-summary",
+    "test:e2e": "docker compose -f docker-compose.e2e.yaml up --exit-code-from cypress",
+    "test:e2e:live": "docker compose -f docker-compose.e2e.yaml up --exit-code-from cypress --no-deps --build cypress",
+    "tsc": "tsc"
+  },
+  "dependencies": {
+    "@apollo/client": "^3.12.6",
+    "@babel/runtime": "^7.25.7",
+    "@module-federation/nextjs-mf": "^8.8.12",
+    "@telus-uds/components-web": "^2.44.0",
+    "@telus-uds/palette-allium": "^3.4.0",
+    "@telus-uds/palette-koodo": "^1.9.0",
+    "@telus-uds/theme-allium": "^5.4.0",
+    "@telus-uds/theme-koodo": "^5.23.0",
+    "@telus/core-logger": "^1.8.0",
+    "@telus/next-styled-base": "^12.6.0",
+    "@telus/next-uds": "^12.6.0",
+    "@telus/risk-engine-cov": "^1.0.8",
+    "@telus/sod-api-kit": "^14.4.0",
+    "@telus/web-app-core": "^12.3.4",
+    "isomorphic-fetch": "^3.0.0",
+    "next": "^14.2.18",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "styled-components": "^5.3.11"
+  },
+  "devDependencies": {
+    "@testing-library/dom": "^10.4.0",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.0.1",
+    "@types/isomorphic-fetch": "^0.0.39",
+    "@types/node": "^22.10.1",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@types/styled-components": "^5.1.34",
+    "axe-core": "^4.10.2",
+    "cypress": "^13.16.0",
+    "cypress-axe": "^1.5.0",
+    "eslint": "^8.57.1",
+    "eslint-config-next": "^14.2.18",
+    "eslint-plugin-cypress": "^2.15.2",
+    "eslint-plugin-jest": "^27.9.0",
+    "eslint-plugin-testing-library": "^6.5.0",
+    "ignore-loader": "^0.1.2",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.2"
+  },
+  "riskEngineCov": {
+    "covScript": "npm run test:coverage"
+  },
+  "engines": {
+    "node": ">=18.17.1",
+    "npm": ">8.0.0"
+  }
+}

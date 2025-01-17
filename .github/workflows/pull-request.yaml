@@ -1,0 +1,25 @@
+name: Pull Request Validation
+on:
+  pull_request:
+    types: [opened, reopened, ready_for_review, synchronize]
+
+concurrency:
+  group: validate-${{ github.ref }}
+
+jobs:
+  validate-pull-request:
+    name: Run unit tests and lint
+    uses: telus/dx-actions-web-app-starter-kit/.github/workflows/validate.yml@v5
+    with:
+      unit-script: test:coverage
+      # Choose which .env.* file to use in your cypress test runner (defaults to .env.test)
+      # e2e_env_file: .env.test
+      # Choose which .env.* file to load for unit tests (defaults to .env.test)
+      # unit_env_file: .env.test
+    secrets: inherit
+      # Pass environment variables and secrets into your app and unit tests here:
+      # unit_env: |
+      #   APP_SECRET=${{ secrets.APP_SECRET }}
+      # Pass environment variables and secrets into your app and e2e tests here:
+      # e2e_env: |
+      #   APP_SECRET=${{ secrets.APP_SECRET }}

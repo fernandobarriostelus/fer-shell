@@ -1,0 +1,21 @@
+{
+  "projectName": "fer-shell",
+  "templateVersion": "12.0.0",
+  "team": "astrotacos-devs",
+  "language": "ts",
+  "template": "core",
+  "extensions": {
+    "deploy-cdo": "N/A",
+    "deploy-gke": "N/A",
+    "global-elements": "N/A",
+    "next-seo": "N/A",
+    "next-unleash": "N/A",
+    "redux": "N/A",
+    "UDS": "installed",
+    "cache-client": "N/A",
+    "contentful": "N/A",
+    "locale-middleware": "N/A",
+    "styled-components": "installed",
+    "localized-document": "N/A"
+  }
+}
