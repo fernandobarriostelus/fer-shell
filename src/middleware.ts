@@ -4,7 +4,8 @@ export default async function testMiddleware(request: NextRequest) {
   const { nextUrl } = request
   const { pathname } = nextUrl
 
-  logger.info('this is a test logger', pathname)
+  // Uncomment the next line to see the logger in action
+  //   logger.info('this is a test logger', pathname)
 
   return NextResponse.next()
 }

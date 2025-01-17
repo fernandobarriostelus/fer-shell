@@ -1,3 +1,3 @@
-import { logger } from '@telus/sod-api-kit/lib/utils/logger'
+import logger from '@telus/core-logger'
 
 export default logger
